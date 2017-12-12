@@ -2,13 +2,13 @@ $(document).ready(function () {
   $.getJSON("https://randomuser.me/api/?results=12", function getEmployees (data) {
     //console.log(data.results);
     $.each( data.results, function (i, employee) {
-      var employeeHTML = '<div class="box">';
+      var employeeHTML = '<a class="box" href=\'' + employee.picture.large + '\' rel="lightbox"';
       employeeHTML += '<div class="photo" style="background-image: url(\'' + employee.picture.large + '\');"></div>';
       employeeHTML += '<div class="student-info">';
       employeeHTML += '<p class="name">'+ employee.name.first + ' ' + employee.name.last + '</p>';
       employeeHTML += '<p class="email">'+ employee.email +'</p>';
       employeeHTML += '<p class="city">'+ employee.location.city +'</p>';
-      employeeHTML += '</div></div>';
+      employeeHTML += '</div></a>';
       $('#primary-container').append(employeeHTML);
     });
   });

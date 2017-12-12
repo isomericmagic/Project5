@@ -4,12 +4,26 @@
     <meta charset="UTF-8">
     <title>Awesome Startup Employee Directory</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/jquery.lightbox-0.5.css">
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="js/employeeDirectory.js"></script>
+    <script src="js/jquery.lightbox-0.5.min.js"></script>
   <head>
   <body>
   	<div id="primary-container">
 	  	<h3>AWESOME STARTUP EMPLOYEE DIRECTORY</h3>
   	<div>
+		<script type="text/javascript">
+		$(function(){
+		  $('a[rel=lightbox]').lightBox({
+		    containerResizeSpeed: 250,
+		    fixedNavigation: true
+		  });
+		  $('a[rel=2ndlightbox]').lightBox({
+		    overlayBgColor: '#fff',
+		    overlayOpacity: 0.7
+		  });
+		});
+		</script>
   </body>
 </html>
