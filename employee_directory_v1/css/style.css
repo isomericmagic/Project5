@@ -102,7 +102,7 @@ p.city {
 p.pop-up-name {
 	color: #3C4451;
 	text-align: center;
-	font-size: 18px;
+	font-size: 16px;
   font-weight: bold;
   line-height: 5px;
 }
@@ -110,14 +110,14 @@ p.pop-up-name {
 p.pop-up-email {
 	color: #B3B6BC;
 	text-align: center;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 10px;
 }
 
 p.pop-up-city {
 	color: #B3B6BC;
 	text-align: center;
-  font-size: 15px;
+  font-size: 12px;
   line-height: 10px;
 }
 
@@ -130,6 +130,6 @@ p.pop-up-line {
 p.pop-up-details {
 	color: #B3B6BC;
 	text-align: center;
-  font-size: 15px;
-  line-height: 10px;
+  font-size: 12px;
+  line-height: 20px;
 }
