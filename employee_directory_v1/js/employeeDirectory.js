@@ -6,7 +6,7 @@ $(document).ready(function () {
   $.getJSON("https://randomuser.me/api/?results=12", function getEmployees (data) {
     var employeeNumber = 0;
     $.each( data.results, function (i, employee) {
-      var employeeAddress = employee.location.street + employee.location.city + ", " + employee.location.state + ' ' + employee.location.postcode;
+      var employeeAddress = employee.location.street + " " + employee.location.city + ", " + employee.location.state + ' ' + employee.location.postcode;
       employeeAddress = toTitleCase(employeeAddress);
       employeeCity = toTitleCase(employee.location.city);
       employeeName = toTitleCase(employee.name.first + ' ' + employee.name.last);
@@ -23,12 +23,13 @@ $(document).ready(function () {
       employeeHTML += '<div class="pop-up-student-info">';
       employeeHTML += '<br>';
       employeeHTML += '<p class="pop-up-name">'+ employeeName + '</p>';
+			employeeHTML += '<p class="pop-up-email">'+ employee.login.username +'</p>';
       employeeHTML += '<p class="pop-up-email">'+ employee.email +'</p>';
       employeeHTML += '<p class="pop-up-city">'+ employeeCity +'</p>';
       employeeHTML += '<p class="pop-up-line">_________________________________</p>';
-      employeeHTML += '<p class="pop-up-details">'+ employee.phone +'</p>';
+      employeeHTML += '<p class="pop-up-details">'+ employee.cell +'</p>';
       employeeHTML += '<p class="pop-up-details">'+ employeeAddress +'</p>';
-      employeeHTML += '<p class="pop-up-details">'+ employeeBirthday +'</p>';
+      employeeHTML += '<p class="pop-up-details">Birthday: '+ employeeBirthday +'</p>';
       employeeHTML += '</div></div>';
       $('#primary-container').append(employeeHTML);
       employeeNumber ++;
