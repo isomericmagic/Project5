@@ -10,7 +10,7 @@ $(document).ready(function () {
       employeeAddress = toTitleCase(employeeAddress);
       employeeCity = toTitleCase(employee.location.city);
       employeeName = toTitleCase(employee.name.first + ' ' + employee.name.last);
-      employeeBirthday = employee.dob.slice(0,10);
+      employeeBirthday = employee.dob.date.slice(0,10);
       var employeeHTML = '<div class="box" data-featherlight="#mylightbox' + employeeNumber.toString() + '">';
       employeeHTML += '<div class="photo" style="background-image: url(\'' + employee.picture.large + '\');"></div>';
       employeeHTML += '<div class="student-info">';
