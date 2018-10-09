@@ -3,7 +3,11 @@ $(document).ready(function () {
   {
     return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
   }
-  $.getJSON("https://randomuser.me/api/?results=12", function getEmployees (data) {
+  //$.getJSON("https://randomuser.me/api/?results=12", function getEmployees (data) {
+  //use fetch instead of jquery for the API request
+  fetch("https://randomuser.me/api/?results=12")
+    .then(response => response.json())
+    .then( data => {
     var employeeNumber = 0;
     $.each( data.results, function (i, employee) {
       var employeeAddress = employee.location.street + " " + employee.location.city + ", " + employee.location.state + ' ' + employee.location.postcode;
@@ -23,7 +27,6 @@ $(document).ready(function () {
       employeeHTML += '<div class="pop-up-student-info">';
       employeeHTML += '<br>';
       employeeHTML += '<p class="pop-up-name">'+ employeeName + '</p>';
-			employeeHTML += '<p class="pop-up-email">'+ employee.login.username +'</p>';
       employeeHTML += '<p class="pop-up-email">'+ employee.email +'</p>';
       employeeHTML += '<p class="pop-up-city">'+ employeeCity +'</p>';
       employeeHTML += '<p class="pop-up-line">_________________________________</p>';
