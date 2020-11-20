@@ -10,7 +10,8 @@ $(document).ready(function () {
     .then( data => {
     var employeeNumber = 0;
     $.each( data.results, function (i, employee) {
-      var employeeAddress = employee.location.street + " " + employee.location.city + ", " + employee.location.state + ' ' + employee.location.postcode;
+      //var employeeAddress = employee.location.street + " " + employee.location.city + ", " + employee.location.state + ' ' + employee.location.postcode;
+      var employeeAddress = employee.location.city + ", " + employee.location.state + ' ' + employee.location.postcode;
       employeeAddress = toTitleCase(employeeAddress);
       employeeCity = toTitleCase(employee.location.city);
       employeeName = toTitleCase(employee.name.first + ' ' + employee.name.last);
